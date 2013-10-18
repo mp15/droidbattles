@@ -28,7 +28,7 @@ class startdeathbatt : public startsurvbatt
 {
     Q_OBJECT
 public:
-    startdeathbatt();
+    startdeathbatt(QWidget* parent);
     ~startdeathbatt();
 
 protected:

@@ -172,7 +172,7 @@ void DroidBattles::skirmish()
 {
     disablebattles();
     //Start the dialog where you can choose which bots should fight
-    ssb = new startsbatt();
+    ssb = new startsbatt(this);
     ssb->resize (300,570);
     ssb->show();
     QObject::connect (ssb,SIGNAL (okclicked()),this,
@@ -230,7 +230,7 @@ void DroidBattles::stopskirmish()
 void DroidBattles::survival()
 {
     disablebattles();
-    ssb = new startsurvbatt();
+    ssb = new startsurvbatt(this);
     ssb->resize (300,570);
     ssb->show();
     QObject::connect (ssb,SIGNAL (okclicked()),this,
@@ -280,7 +280,7 @@ void DroidBattles::stopsurvival()
 void DroidBattles::death()
 {
     disablebattles();
-    ssb = new startdeathbatt();
+    ssb = new startdeathbatt(this);
     ssb->resize (300,570);
     ssb->show();
     QObject::connect (ssb,SIGNAL (okclicked()),this,SLOT (startdeath()));

@@ -475,7 +475,7 @@ void createbot::open()
             break;
         }
     }
-    QString tempname = Q3FileDialog::getOpenFileName (0,"*.basm",this);
+    QString tempname = Q3FileDialog::getOpenFileName (".","*.basm",this);
     if (!tempname.isEmpty())
     {
         QFile f (tempname);
@@ -2611,7 +2611,7 @@ void createbot::startquick()
 	*/
 void createbot::confquick()
 {
-    qc = new quickconf();
+    qc = new quickconf(this);
     QObject::connect (qc,SIGNAL (cancelclicked()),this,SLOT (stopconf()));
     qc->resize (300,570);
     qc->show();

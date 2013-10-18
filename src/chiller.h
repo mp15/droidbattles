@@ -30,6 +30,7 @@ public:
     chiller (screenobject &object, int arg1);
     ~chiller();
     void execute();
+    int getfromport (unsigned char port);
 private:
     bool ison;
     int heatdiss;

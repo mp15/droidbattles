@@ -35,8 +35,8 @@ public:
     device (screenobject &object);
     void addinport (unsigned char port,unsigned short value);
     void setrelang (int);
-    virtual void execute();
-    virtual int getfromport (unsigned char port);
+    virtual void execute() = 0;
+    virtual int getfromport (unsigned char port) = 0;
     virtual int absorbhit (int str,int ifint);
     virtual void erasegfx (QWidget *buffer);
     virtual void showgfx (QWidget *buffer);

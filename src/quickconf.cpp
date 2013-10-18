@@ -23,7 +23,8 @@
 /**
 	* Init GUI and load existing quick config
 	*/
-quickconf::quickconf()
+quickconf::quickconf(QWidget* parent)
+	: startsbatt(parent)
 {
 
     int x;

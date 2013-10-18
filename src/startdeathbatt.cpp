@@ -19,7 +19,8 @@
 //Added by qt3to4:
 #include <Q3TextStream>
 
-startdeathbatt::startdeathbatt()
+startdeathbatt::startdeathbatt(QWidget* parent)
+	: startsurvbatt(parent)
 {
     tnumfights->setText ("Number of frags:");
     loadfilesettings();

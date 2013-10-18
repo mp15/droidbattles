@@ -34,6 +34,7 @@ public:
     plasma (screenobject &object,int arg1,int offset);
     ~plasma();
     void execute();
+	int getfromport(unsigned char);
 
 private:
 

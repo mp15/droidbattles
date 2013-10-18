@@ -46,7 +46,7 @@ class startsbatt : public QWidget
 
 public:
 
-    startsbatt();
+    startsbatt(QWidget* parent);
     ~startsbatt();
     int getnumofbots();
     char* getbotfile (int bot);

@@ -32,6 +32,7 @@ public:
     cloaker (screenobject &object, int arg1);
     ~cloaker();
     void execute();
+	int getfromport(unsigned char);
 private:
     bool cloakon;
 };

@@ -31,7 +31,7 @@ class quickconf : public startsbatt
     Q_OBJECT
 
 public:
-    quickconf();
+    quickconf(QWidget* parent);
     ~quickconf();
 
 private slots:

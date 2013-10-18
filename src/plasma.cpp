@@ -57,3 +57,8 @@ void plasma::execute()
         readiness -= 80;
     }
 }
+
+int plasma::getfromport(unsigned char)
+{
+	return 0; // GNDN
+}

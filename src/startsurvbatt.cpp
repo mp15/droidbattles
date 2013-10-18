@@ -19,7 +19,8 @@
 //Added by qt3to4:
 #include <Q3TextStream>
 
-startsurvbatt::startsurvbatt()
+startsurvbatt::startsurvbatt(QWidget* parent)
+	: startsbatt(parent)
 {
     ifteams->setText ("Fast battle");
     for (int x=0; x<8; x++)

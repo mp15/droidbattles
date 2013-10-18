@@ -25,7 +25,8 @@
 /**
 	* init GUI, load file from last battle
 	*/
-startsbatt::startsbatt()
+startsbatt::startsbatt(QWidget* parent)
+	: QWidget(parent, "startsbatt", Qt::Dialog)
 {
     int x;
     for (x=0; x<8; x++)
@@ -151,7 +152,7 @@ char* startsbatt::getbotfile (int x)
 	*/
 void startsbatt::choosefile()
 {
-    QString tempname = Q3FileDialog::getOpenFileName (0,"*.bot",this);
+    QString tempname = Q3FileDialog::getOpenFileName (".",QString("Bots (*.bot)"),this,"open bot dialog","Choose a bot...");
     int x;
 
     for (x=0; x<8; x++)

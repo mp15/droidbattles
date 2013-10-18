@@ -29,7 +29,7 @@ class startsurvbatt : public startsbatt
 {
     Q_OBJECT
 public:
-    startsurvbatt();
+    startsurvbatt(QWidget* parent);
     ~startsurvbatt();
 private slots:
     virtual void ocl();

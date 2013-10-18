@@ -47,15 +47,6 @@ void device::addinport (unsigned char port, unsigned short value)
     }
 }
 
-void device::execute()
-{
-}
-
-int device::getfromport (unsigned char /*port*/)
-{
-    return 0;
-}
-
 int device::absorbhit (int str, int /*ifint*/)
 {
     return str;

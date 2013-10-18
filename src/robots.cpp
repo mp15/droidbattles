@@ -130,7 +130,8 @@ robots::robots (char *name,textmodeBattleArea &object,int mnum, confstruct confi
                 switch (my[x*6+2])
                 {
                 case 0 :
-                    devicelist[x] = new device (*this);
+					devicelist[x] = NULL;
+                    //devicelist[x] = new device (*this);
                     break;
                 case 1 :
                     devicelist[x] = new robCPU (*ramdevice,*this,levelvalue,my[x*6+4],
@@ -200,14 +201,15 @@ robots::robots (char *name,textmodeBattleArea &object,int mnum, confstruct confi
                     devicelist[x] = new rocketlauncher (*this, levelvalue,my[x*6+4]);
                     break;
                 default :
-                    devicelist[x] = new device (*this);
+					devicelist[x] = NULL;
+                    //devicelist[x] = new device (*this);
                     break;
                 }
             }
             else
             {
                 error ("File format error",name);
-                devicelist[x] = new device (*this);
+                //devicelist[x] = new device (*this);
             }
         }
         if (numdev > config.maxdev)
@@ -222,7 +224,8 @@ robots::robots (char *name,textmodeBattleArea &object,int mnum, confstruct confi
         error ("Couldn't open bot file!",name);
         ramdevice = new RAM;
         for (int x=0; x<32; x++)
-            devicelist[x] = new device (*this);
+			devicelist[x] = NULL;
+            //devicelist[x] = new device (*this);
     }
 
     if (useUI)
@@ -377,7 +380,7 @@ void robots::showobject (QWidget *buffer, int opt)
 	*/
 int robots::getdevport (unsigned char port)
 {
-    int tempport = port%portsperdev;
+    unsigned char tempport = port%portsperdev;
     int tempdevice = int (port/portsperdev);
     int temp = devicelist[tempdevice]->getfromport (tempport);
     return temp;
@@ -388,7 +391,7 @@ int robots::getdevport (unsigned char port)
 	*/
 void robots::putdevport (unsigned char port, unsigned short value)
 {
-    int tempport = port%portsperdev;
+    unsigned char tempport = port%portsperdev;
     int tempdevice = int (port/portsperdev);
     devicelist[tempdevice]->addinport (tempport,value);
 }

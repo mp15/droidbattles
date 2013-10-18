@@ -38,6 +38,11 @@ chiller::~chiller()
 {
 }
 
+int chiller::getfromport (unsigned char )
+{
+	return 0; // GNDN
+}
+
 void chiller::execute()
 {
     if (ison && ourbot->getfuel() > 5)

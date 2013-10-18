@@ -38,6 +38,11 @@ cloaker::~cloaker()
 {
 }
 
+int cloaker::getfromport(unsigned char)
+{
+	return 0; // GNDN
+}
+
 void cloaker::execute()
 {
     if (cloakon && ourbot->getfuel() > 5)

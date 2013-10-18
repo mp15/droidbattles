@@ -28,10 +28,12 @@ PixButton::~PixButton()
 {
 }
 
-void PixButton::paintEvent (QPaintEvent *)
+void PixButton::paintEvent (QPaintEvent *pe)
 {
-    QPainter paint;
-    paint.drawPixmap (2,2,Pixmapholder::getpm (whichpix),
+	//QPushButton::paintEvent(pe);
+    QPainter *paint = new QPainter(this);
+    paint->drawPixmap (2,2,Pixmapholder::getpm (whichpix),
                        0,0,width()-5,height()-5);
-    paint.drawText (2, 2, width()-5, height()-5, Qt::AlignCenter, tex, -1);
+    paint->drawText (2, 2, width()-5, height()-5, Qt::AlignCenter, tex, -1);
+	delete paint;
 }
